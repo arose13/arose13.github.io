@@ -1,0 +1,409 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Futura PT', 'Century Gothic', 'Helvetica Neue', Arial, sans-serif;
+  color: #fff;
+  background-color: #111217;
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== Header / Nav ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.site-header.scrolled {
+  background-color: rgba(17, 18, 23, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.site-header .logo a {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.site-header nav ul {
+  display: flex;
+  gap: 30px;
+}
+
+.site-header nav a {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.site-header nav a:hover,
+.site-header nav a.active {
+  opacity: 1;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ===== Cover / Hero ===== */
+.cover {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cover-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.cover-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.cover-content .name {
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.cover-content h1 {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.cover-content .tagline {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+/* ===== Buttons ===== */
+.btn-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+}
+
+/* ===== Social Icons ===== */
+.social-icons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-icons svg {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
+/* ===== Page Layout ===== */
+.page {
+  min-height: 100vh;
+  padding: 120px 40px 80px;
+}
+
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+/* ===== About Me ===== */
+.about-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+}
+
+.about-bio {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 600px;
+  opacity: 0.9;
+}
+
+/* ===== Projects / Apps ===== */
+.section-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  opacity: 0.7;
+  margin-top: -32px;
+  margin-bottom: 48px;
+  letter-spacing: 0.5px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 40px;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.project-card .project-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.project-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.project-card p {
+  font-size: 16px;
+  font-weight: 300;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.project-card .project-link {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.project-card .project-link:hover {
+  opacity: 1;
+}
+
+.project-card .project-link + .project-link {
+  margin-left: 20px;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-footer .social-icons {
+  margin-bottom: 24px;
+}
+
+.site-footer p {
+  font-size: 13px;
+  font-weight: 300;
+  opacity: 0.5;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 16px 20px;
+  }
+
+  .site-header nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(17, 18, 23, 0.98);
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .site-header nav ul.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .cover-content h1 {
+    font-size: 40px;
+  }
+
+  .cover-content .name {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .page {
+    padding: 100px 20px 60px;
+  }
+
+  .page-title {
+    font-size: 32px;
+  }
+
+  .project-card {
+    padding: 28px;
+  }
+
+  .about-bio {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cover-content h1 {
+    font-size: 32px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+  }
+}
