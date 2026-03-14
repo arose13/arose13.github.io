@@ -177,7 +177,8 @@ img {
 }
 
 .btn:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: #fff;
+  color: #111217;
   border-color: #fff;
 }
 
